@@ -224,7 +224,7 @@ func createDir(dir string) error {
 	if err := os.RemoveAll(dir); err != nil {
 		return err
 	}
-	return os.MkdirAll(dir, 0644)
+	return os.MkdirAll(dir, 0744)
 }
 
 func derivePort(url *url.URL) string {
