@@ -17,4 +17,4 @@ vendor/*
 #binary - go build
 jmeter-service
 jmeter-extended-service
-
+jmeter-service*.tgz

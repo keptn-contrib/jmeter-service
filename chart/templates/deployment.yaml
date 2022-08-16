@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "jmeter-service.fullname" . }}
-  labels: {{- include "keptn.common.labels.standard" . | nindent 4 }}
-    app.kubernetes.io/name: {{ include "jmeter-service.name" . }}
+  labels: 
+    {{- include "jmeter-service.labels" . | nindent 4 }}
 spec:
   replicas: 1
   selector:
-    matchLabels: {{- include "keptn.common.labels.selectorLabels" . | nindent 6 }}
-      app.kubernetes.io/name: {{ include "jmeter-service.name" . }}
+   matchLabels: 
+      {{- include "jmeter-service.labels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
       annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      labels: {{- include "keptn.common.labels.standard" . | nindent 8 }}
-        app.kubernetes.io/name: {{ include "jmeter-service.name" . }}
+      labels: 
+        {{- include "jmeter-service.labels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -29,11 +29,7 @@ spec:
         - name: jmeter-service
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          {{- if .Values.image }}
-          image: {{ .Values.image }} # use image from .Values.image (e.g., when starting via skaffold)
-          {{- else }}
-          image: {{ include "keptn.common.images.image" ( dict "imageRoot" .Values.jmeterservice.image "global" .Values.global.keptn "defaultTag" .Chart.AppVersion) | quote }}
-          {{- end }}
+          image: "{{ .Values.jmeterservice.image.repository }}:{{ .Values.jmeterservice.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.jmeterservice.image.pullPolicy }}
           ports:
             - containerPort: 80
@@ -50,6 +46,8 @@ spec:
               port: 8080
             initialDelaySeconds: 0
             periodSeconds: 5
+          # Note: the jmeter-service does not implement a dedicated ready endpoint
+          #       therefore the /health endpoint is used here
           readinessProbe:
             httpGet:
               path: /health
@@ -59,7 +57,7 @@ spec:
           resources:
             {{- toYaml .Values.jmeterservice.resources | nindent 12 }}
         - name: distributor
-          image: {{ include "keptn.common.images.image" ( dict "imageRoot" .Values.distributor.image "global" .Values.global.keptn "defaultTag" .Chart.AppVersion) | quote }}
+          image: "{{ .Values.distributor.image.repository }}:{{ .Values.distributor.image.tag | default .Chart.AppVersion }}"
           {{- include "jmeter-service.prestop" . | nindent 10 }}
           livenessProbe:
             httpGet:
@@ -90,7 +88,7 @@ spec:
             - name: SERVICE_FILTER
               value: "{{ .Values.distributor.serviceFilter }}"
             - name: DISTRIBUTOR_VERSION
-              value: {{ include "keptn.common.images.tag" ( dict "imageRoot" .Values.distributor.image "global" .Values.global.keptn "defaultTag" .Chart.AppVersion) | quote }}
+              value: "{{ .Values.distributor.image.tag | default .Chart.AppVersion }}"
             - name: VERSION
               valueFrom:
                 fieldRef:
