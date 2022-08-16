@@ -4,7 +4,7 @@ build:
   local:
     useBuildkit: true
   artifacts:
-    - image: keptndev/jmeter-service
+    - image: keptn-contrib/jmeter-service
       docker:
         dockerfile: Dockerfile
         target: production
@@ -17,12 +17,9 @@ deploy:
     releases:
       - name: jmeter-service # needs to be the same name as currently used (check via helm ls -n keptn)
         namespace: keptn # needs to be the same namespace as where the helm-chart is currently deployed
-        # upgradeOnChange: true
-        # recreatePods: false # don't recreate all pods
-        artifactOverrides:
-          image: keptndev/jmeter-service
-        overrides:
-          distributor:
-            image:
-              tag: 0.8.4
         chartPath: chart
+        artifactOverrides:
+          jmeterservice:
+            image: keptn-contrib/jmeter-service
+        imageStrategy:
+          helm: { }

@@ -22,7 +22,7 @@ version: 0.1.0
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: latest
 
-dependencies:
-  - name: common
-    repository: "file://../../installer/manifests/common"
-    version: 0.1.0
+#dependencies:
+#  - name: common
+#    repository: "file://./../installer/manifests/common"
+#    version: 0.1.0
