@@ -1,6 +1,6 @@
 module github.com/keptn-contrib/jmeter-service
 
-go 1.18
+go 1.17
 
 require (
 	github.com/cloudevents/sdk-go/v2 v2.11.0
