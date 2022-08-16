@@ -2,6 +2,12 @@
 
 The *jmeter-service* has been updated with the implementation from the Keptn-Contrib project [jmeter-extended-service](https://github.com/keptn-contrib/jmeter-extended-service). This service provides extended capabilities around custom workload definitions and executions.
 
+## Compatibility Matrix
+
+| Keptn Version | [Jmeter-service Docker Image](https://github.com/keptn-contrib/jmeter-service/pkgs/container/jmeter-service) |
+|:-------------:|:------------------------------------------------------------------------------------------------------------:|
+|    0.17.0     |                               keptn-contrib/jmeter-service:1.0.0                                             |
+
 ## Installation
 
 The *jmeter-service* is part of the *Execution Plane for Continuous Delivery*.
@@ -11,10 +17,10 @@ You can find installation instructions [here](https://keptn.sh/docs/0.15.x/opera
 To install it next to your Keptn installation, you can use the following command:
 
 ```console
-helm install jmeter-service https://github.com/keptn/keptn/releases/download/<latest>/jmeter-service-<latest>.tgz -n keptn
+helm install jmeter-service https://github.com/keptn-contrib/jmeter-service/releases/download/<latest>/jmeter-service-<latest>.tgz -n keptn
 ```
 
-Replace `<latest>` with a Keptn version available from the [release list](https://github.com/keptn/keptn/tags).
+Replace `<latest>` with a Keptn version available from the [release list](https://github.com/keptn-contrib/jmeter-service/tags).
 
 ## Development
 
