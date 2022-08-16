@@ -1,6 +1,19 @@
 apiVersion: v2
-name: jmeter-service
-description: Helm Chart for the keptn jmeter-service
+name: common
+description: A Library Helm Chart for grouping common logic needed for different keptn charts. This chart cannot be deployed by itself.
+home: "https://github.com/keptn/keptn/tree/master/installer/manifests/common"
+icon: "https://raw.githubusercontent.com/cncf/artwork/master/projects/keptn/icon/color/keptn-icon-color.svg"
+annotations:
+  artifacthub.io/license: "Apache-2.0"
+  artifacthub.io/links: |
+    - name: support
+      url: https://github.com/keptn/keptn/issues
+keywords:
+  - common
+  - helper
+  - template
+  - function
+  - keptn
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -10,19 +23,13 @@ description: Helm Chart for the keptn jmeter-service
 # Library charts provide useful utilities or functions for the chart developer. They're included as
 # a dependency of application charts to inject those utilities and functions into the rendering
 # pipeline. Library charts do not define any templates and therefore cannot be deployed.
-type: application
+type: library
 
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
 version: 0.1.0
 
-# This is the version number of the application being deployed. This version number should be
-# incremented each time you make changes to the application. Versions are not expected to
-# follow Semantic Versioning. They should reflect the version the application is using.
-appVersion: latest
-
-dependencies:
-  - name: common
-    repository: "file://../installer/manifests/common"
-    version: 0.1.0
+sources:
+  - "https://github.com/keptn/keptn/tree/master/installer/manifests/common"
+  - "https://github.com/keptn/keptn"
