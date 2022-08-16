@@ -11,3 +11,10 @@ bin/
 test-data/
 test-events/
 assets/
+images/
+.ci_env
+.reviewdog.yaml
+.versionrc.json
+renovate.json
+deployment.finished.event.http
+.gitignore
