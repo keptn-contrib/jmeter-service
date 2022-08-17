@@ -46,6 +46,8 @@ spec:
               port: 8080
             initialDelaySeconds: 0
             periodSeconds: 5
+          # Note: the jmeter-service does not implement a dedicated ready endpoint
+          #       therefore the /health endpoint is used here
           readinessProbe:
             httpGet:
               path: /health
