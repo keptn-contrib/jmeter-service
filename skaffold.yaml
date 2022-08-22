@@ -4,7 +4,7 @@ build:
   local:
     useBuildkit: true
   artifacts:
-    - image: keptn-contrib/jmeter-service
+    - image: ghcr.io/keptn-contrib/jmeter-service
       docker:
         dockerfile: Dockerfile
         target: production
@@ -20,6 +20,6 @@ deploy:
         chartPath: chart
         artifactOverrides:
           jmeterservice:
-            image: keptn-contrib/jmeter-service
+            image: ghcr.io/keptn-contrib/jmeter-service
         imageStrategy:
           helm: { }
