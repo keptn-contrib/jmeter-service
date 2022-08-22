@@ -21,8 +21,7 @@ defaults:
 jobs:
   prepare_ci_run:
     name: Prepare CI Run
-    # Prepare CI Run looks at what has been changed in this commit/PR/... and determines which artifacts should be
-    # built afterwards (in other jobs that depend on this one).
+    # Prepare CI Run looks at what has been changed in this commit/PR/... and builds the artifacts
     runs-on: ubuntu-20.04
     outputs: # declare what this job outputs (so it can be re-used for other jobs)
       # build config
