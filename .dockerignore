@@ -18,3 +18,4 @@ images/
 renovate.json
 deployment.finished.event.http
 .gitignore
+.vscode
