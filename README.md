@@ -6,7 +6,7 @@ The *jmeter-service* has been updated with the implementation from the Keptn-Con
 
 | Keptn Version | [Jmeter-service Docker Image](https://github.com/keptn-contrib/jmeter-service/pkgs/container/jmeter-service) |
 |:-------------:|:------------------------------------------------------------------------------------------------------------:|
-|    0.17.0     |                               keptn-contrib/jmeter-service:1.0.0                                             |
+|    0.17.0     |                               keptn-contrib/jmeter-service:0.18.0                                            |
 
 ## Installation
 
