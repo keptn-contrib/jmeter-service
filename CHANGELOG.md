@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.18.1](https://github.com/keptn-contrib/jmeter-service/compare/0.18.0...0.18.1) (2022-08-29)
+
+
+### Bug Fixes
+
+* Use distributor 0.18.0 for Keptn 0.18.0 compatibility ([#5](https://github.com/keptn-contrib/jmeter-service/issues/5)) ([0febaff](https://github.com/keptn-contrib/jmeter-service/commit/0febaffdd2eea34a535d3082abf4c6ae0f11ea29))
+
+
+### Other
+
+* Fix compatibility matrix in README.md ([#4](https://github.com/keptn-contrib/jmeter-service/issues/4)) ([3a1b9b7](https://github.com/keptn-contrib/jmeter-service/commit/3a1b9b73cd9f8500bd7e5b8e632913ac68b410a2))
+
 ## [0.18.0](https://github.com/keptn-contrib/jmeter-service/compare/0.17.0...0.18.0) (2022-08-24)
 
 
