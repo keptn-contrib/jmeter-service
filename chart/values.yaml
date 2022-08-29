@@ -27,7 +27,7 @@ distributor:
   projectFilter: ""                          # Sets the project this helm service belongs to
   image:
     repository: "docker.io/keptn/distributor"      # Container Image Name
-    tag: "0.17.0"                                  # Container Tag
+    tag: "0.18.0"                                  # Container Tag
     pullPolicy: IfNotPresent                 # Kubernetes Image Pull Policy
   config:
     queueGroup:
