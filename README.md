@@ -1,12 +1,25 @@
 # JMeter Service
 
+**Before you start**
+
+Please consider using [job-executor-service](https://github.com/keptn-contrib/job-executor-service) and get full control
+of your (load)test commands, allowing you to run different types of (load)testing tools, e.g.
+* [Jmeter](https://artifacthub.io/packages/keptn/keptn-integrations/jmeter)
+* [locust](https://artifacthub.io/packages/keptn/keptn-integrations/locust-service)
+* [k6](https://artifacthub.io/packages/keptn/keptn-integrations/k6-keptn-integration)
+
+---
+
 The *jmeter-service* has been updated with the implementation from the Keptn-Contrib project [jmeter-extended-service](https://github.com/keptn-contrib/jmeter-extended-service). This service provides extended capabilities around custom workload definitions and executions.
 
 ## Compatibility Matrix
 
 |     Keptn Version     | [Jmeter-service Docker Image](https://github.com/keptn-contrib/jmeter-service/pkgs/container/jmeter-service) |
 |:---------------------:|:------------------------------------------------------------------------------------------------------------:|
-|    0.17.0 - 0.18.x    |                               keptn-contrib/jmeter-service:0.18.0                                            |
+| 0.17.0 and older |                              Please use https://github.com/keptn/keptn/releases                              |
+|      0.18.0      |                                     keptn-contrib/jmeter-service:0.18.1                                      |
+
+Newer Keptn versions might be compatible, but compatibility has not been verified at the time of the release.
 
 Newer Keptn versions might be compatible, but compatibility has not been verified at the time of the release.
 
@@ -14,15 +27,19 @@ Newer Keptn versions might be compatible, but compatibility has not been verifie
 
 The *jmeter-service* is part of the *Execution Plane for Continuous Delivery*.
 
-You can find installation instructions [here](https://keptn.sh/docs/0.15.x/operate/install/#install-keptn).
-
 To install it next to your Keptn installation, you can use the following command:
 
 ```console
-helm install jmeter-service https://github.com/keptn-contrib/jmeter-service/releases/download/<latest>/jmeter-service-<latest>.tgz -n keptn
+JMETER_SERVICE_VERSION=0.18.1 # https://github.com/keptn-contrib/jmeter-service/releases
+helm install jmeter-service https://github.com/keptn-contrib/jmeter-service/releases/download/$JMETER_SERVICE_VERSION/jmeter-service-$JMETER_SERVICE_VERSION.tgz -n keptn
 ```
 
-Replace `<latest>` with a Keptn version available from the [release list](https://github.com/keptn-contrib/jmeter-service/tags).
+## Uninstall
+
+You can uninstall it directly using `helm`, e.g.:
+```console
+helm uninstall jmeter-service -n keptn
+```
 
 ## Development
 

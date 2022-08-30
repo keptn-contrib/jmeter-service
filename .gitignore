@@ -14,6 +14,8 @@
 vendor/*
 .DS_Store
 
+.idea
+
 #binary - go build
 jmeter-service
 jmeter-extended-service
