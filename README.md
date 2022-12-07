@@ -17,7 +17,10 @@ The *jmeter-service* has been updated with the implementation from the Keptn-Con
 |     Keptn Version     | [Jmeter-service Docker Image](https://github.com/keptn-contrib/jmeter-service/pkgs/container/jmeter-service) |
 |:---------------------:|:------------------------------------------------------------------------------------------------------------:|
 | 0.17.0 and older |                              Please use https://github.com/keptn/keptn/releases                              |
-|      0.18.0      |                                     keptn-contrib/jmeter-service:0.18.1                                      |
+|      0.18.x      |                                     keptn-contrib/jmeter-service:0.18.1                                      |
+|      0.19.x      |                                     keptn-contrib/jmeter-service:0.18.1                                      |
+|      0.20.x      |                                     keptn-contrib/jmeter-service:0.18.1                                      |
+|      1.x.y       |                                     keptn-contrib/jmeter-service:0.18.1                                      |
 
 Newer Keptn versions might be compatible, but compatibility has not been verified at the time of the release.
 
