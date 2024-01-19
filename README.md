@@ -1,5 +1,7 @@
 # JMeter Service
 
+## Keptn V1 has reached end of life on December 22nd, 2023 similar to [Keptn V1](https://github.com/keptn/keptn).
+
 **Before you start**
 
 Please consider using [job-executor-service](https://github.com/keptn-contrib/job-executor-service) and get full control
